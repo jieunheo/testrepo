@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Robot {
+            #name;
+                
+            constructor(name) {
+                this.#name = name;
+            }
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.#name}입니다. 주인님.`);
+            }
+        }
+
+        const bot = new Robot('smith');
+
+        // bot.#name // smith
+        // bot.#name = 'jay';
+        // bot.#name
+        bot.sayYourName();
+    </script>
+</body>
+</html>

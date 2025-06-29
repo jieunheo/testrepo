@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+async function getData(){
+    const response = await fetch(`http://test.api.weniv.co.kr/mall`);
+    const productData = await response.json();
+    console.log(productData)
+
+    const main = document.createElement('main');
+
+    productData.forEach(element => {
+        const productName = document.createElement('h2');
+        const productPrice = document.createElement('p');
+        const productImage = document.createElement('img');
+
+        productName.textContent = element.productName;
+        productPrice.textContent = element.price;
+        productImage.src = 'http://test.api.weniv.co.kr/'+ element.thumbnailImg;
+
+        main.appendChild(productName);
+        main.appendChild(productPrice);
+        main.appendChild(productImage);
+    });
+    document.body.appendChild(main);
+}
+getData()
+</script>
+</body>
+</html>

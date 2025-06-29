@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layout</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                color: white;
+            }
+
+            .container {
+                width: 500px;
+                height: 500px;
+                background-color: gray;
+                
+                display: grid;
+                /* grid-template-columns: 1fr 1fr 1fr; */
+	            /* grid-template-rows: 1fr 1fr; */
+                grid-template-rows: auto 1fr auto;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            header,
+            section,
+            aside,
+            footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                padding: 20px;
+            }
+
+            header {
+                background-color: red;
+                /* padding: 50px; */
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 10px;
+            }
+            .main section {
+                background-color: purple;
+                /* padding: 50px; */
+            }
+            .main aside {
+                background-color: yellowgreen;
+                /* padding: 50px; */
+            }
+
+            footer {
+                background-color: blue;
+                /* padding: 50px; */
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>header</header>
+            <div class="main">
+                <section>section > article</section>
+                <aside>aside</aside>
+            </div>
+            <footer>footer</footer>
+        </div>
+    </body>
+</html>

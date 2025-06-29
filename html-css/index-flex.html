@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layout</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                color: white;
+            }
+
+            .container {
+                width: 500px;
+                height: 500px;
+                background-color: gray;
+                
+                display: flex;
+                /* flex-wrap: wrap; - wrap을 할 필요 없이 정렬기준을 수정*/
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            header,
+            section,
+            aside,
+            footer {
+                /* 각 요소에 flex를 사용하여 컨텐츠 중앙정렬 */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            header {
+                background-color: red;
+                /* padding: 50px; */
+                
+                /* width: 100%; */
+            }
+
+            .main {
+                
+                /* width: 100%; */
+                flex: 1;
+                display: flex;
+                gap: 10px;
+            }
+            .main section {
+                background-color: purple;
+                /* padding: 50px; */
+
+                flex-grow: 2;
+            }
+            .main aside {
+                background-color: yellowgreen;
+                /* padding: 50px; */
+
+                flex-grow: 1;
+            }
+
+            footer {
+                background-color: blue;
+                /* padding: 50px; */
+                
+                /* width: 100%; */
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>header</header>
+            <div class="main">
+                <section>section > article</section>
+                <aside>aside</aside>
+            </div>
+            <footer>footer</footer>
+        </div>
+    </body>
+</html>
